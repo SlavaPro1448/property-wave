@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 export const Hero = () => {
   return (
-    <div className="relative h-[80vh] w-full overflow-hidden">
+    <div className="relative h-[90vh] w-full overflow-hidden mt-16">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
@@ -15,16 +15,17 @@ export const Hero = () => {
       <div className="relative container h-full flex items-center">
         <div className="max-w-2xl animate-fade-up">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Professional Property Management Services
+            Ihr Partner für Immobilienverwaltung
           </h1>
           <p className="text-lg md:text-xl text-white/90 mb-8">
-            Expert property management solutions for residential and commercial properties
+            Professionelle Hausverwaltung mit Herz und Verstand
           </p>
           <Button
             size="lg"
             className="bg-white text-primary hover:bg-white/90"
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Contact Us
+            Kontakt aufnehmen
           </Button>
         </div>
       </div>

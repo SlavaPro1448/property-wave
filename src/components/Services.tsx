@@ -3,32 +3,52 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const services = [
   {
-    title: "Property Management",
-    description: "Comprehensive management services for your property portfolio",
+    title: "Technische Verwaltung",
+    description: "Wartung, Instandhaltung und Modernisierung Ihrer Immobilie",
     icon: Building2,
+    details: [
+      "Regelmäßige Gebäudeinspektion",
+      "Koordination von Handwerkern",
+      "Modernisierungsplanung",
+    ],
   },
   {
-    title: "Maintenance",
-    description: "Regular maintenance and emergency repair services",
+    title: "Mietverwaltung",
+    description: "Professionelle Verwaltung Ihrer Mietobjekte",
     icon: ClipboardCheck,
+    details: [
+      "Mietvertragsgestaltung",
+      "Nebenkostenabrechnung",
+      "Mieterkommunikation",
+    ],
   },
   {
-    title: "Tenant Relations",
-    description: "Professional tenant communication and support",
+    title: "WEG-Verwaltung",
+    description: "Kompetente Verwaltung von Wohnungseigentümergemeinschaften",
     icon: HeartHandshake,
+    details: [
+      "Eigentümerversammlungen",
+      "Wirtschaftsplanung",
+      "Beschlussumsetzung",
+    ],
   },
   {
-    title: "Security",
-    description: "Ensuring the safety and security of your properties",
+    title: "Sondereigentumsverwaltung",
+    description: "Individuelle Betreuung Ihrer Eigentumseinheiten",
     icon: Shield,
+    details: [
+      "Vermietungsservice",
+      "Objektbetreuung",
+      "Reporting",
+    ],
   },
 ];
 
 export const Services = () => {
   return (
-    <section className="py-20 bg-secondary">
+    <section id="services" className="py-20 bg-secondary">
       <div className="container">
-        <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
+        <h2 className="text-3xl font-bold text-center mb-12">Unsere Dienstleistungen</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service) => (
             <Card key={service.title} className="hover:shadow-lg transition-shadow">
@@ -37,7 +57,14 @@ export const Services = () => {
                 <CardTitle>{service.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">{service.description}</p>
+                <p className="text-muted-foreground mb-4">{service.description}</p>
+                <ul className="space-y-2">
+                  {service.details.map((detail) => (
+                    <li key={detail} className="text-sm text-muted-foreground">
+                      • {detail}
+                    </li>
+                  ))}
+                </ul>
               </CardContent>
             </Card>
           ))}
