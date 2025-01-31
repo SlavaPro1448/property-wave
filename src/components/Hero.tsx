@@ -12,17 +12,17 @@ export const Hero = () => {
       >
         <div className="absolute inset-0 bg-black/50" />
       </div>
-      <div className="relative container h-full flex items-center">
+      <div className="relative container h-full flex items-center px-4 sm:px-6">
         <div className="max-w-2xl animate-fade-up">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 sm:mb-6">
             Ihr Partner für Immobilienverwaltung
           </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-8">
+          <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8">
             Professionelle Hausverwaltung mit Herz und Verstand
           </p>
           <Button
             size="lg"
-            className="bg-white text-primary hover:bg-white/90"
+            className="bg-white text-primary hover:bg-white/90 w-full sm:w-auto"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Kontakt aufnehmen
