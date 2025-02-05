@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,22 +9,40 @@ export const ContactForm = () => {
   const { toast } = useToast();
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (selectedFile) {
-      console.log("File selected:", selectedFile.name);
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+  
+    try {
+      const response = await fetch("https://your-domain.de/send_email.php", {
+        method: "POST",
+        body: formData,
+      });
+  
+      const result = await response.json();
+      console.log("Server response:", result);
+  
+      toast({
+        title: result.status === "success" ? "Message sent" : "Error",
+        description: result.message,
+        variant: result.status === "success" ? "default" : "destructive",
+      });
+    } catch (error) {
+      console.error("Error:", error);
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
     }
-    toast({
-      title: "Message sent",
-      description: "We'll get back to you as soon as possible.",
-    });
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     
     if (file) {
-      // Проверяем, что файл — PDF
+      // Check if file is PDF
       if (file.type !== "application/pdf") {
         toast({
           title: "Invalid file",
@@ -33,7 +52,7 @@ export const ContactForm = () => {
         return;
       }
 
-      // Проверяем размер (5MB = 5 * 1024 * 1024 байт)
+      // Check size (5MB = 5 * 1024 * 1024 bytes)
       if (file.size > 5 * 1024 * 1024) {
         toast({
           title: "File too large",
@@ -57,20 +76,20 @@ export const ContactForm = () => {
               <label htmlFor="name" className="block mb-2 text-sm sm:text-base">
                 Name
               </label>
-              <Input id="name" required />
+              <Input id="name" name="name" required />
             </div>
             <div>
               <label htmlFor="email" className="block mb-2 text-sm sm:text-base">
                 Email
               </label>
-              <Input id="email" type="email" required />
+              <Input id="email" name="email" type="email" required />
             </div>
           </div>
           <div>
             <label htmlFor="message" className="block mb-2 text-sm sm:text-base">
               Message
             </label>
-            <Textarea id="message" required className="min-h-[120px] sm:min-h-[150px]" />
+            <Textarea id="message" name="message" required className="min-h-[120px] sm:min-h-[150px]" />
           </div>
           <div>
             <label htmlFor="file" className="block mb-2 text-sm sm:text-base">
