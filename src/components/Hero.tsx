@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 
 export const Hero = () => {
@@ -7,22 +8,26 @@ export const Hero = () => {
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage:
-            'url("https://images.unsplash.com/photo-1496307653780-42ee777d4833?auto=format&fit=crop&q=80")',
+            'url("/hausverwaltung-logo.jpg")',
+          backgroundColor: '#F0F2F5',
+          backgroundSize: 'contain',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center'
         }}
       >
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/10" />
       </div>
       <div className="relative container h-full flex items-center px-4 sm:px-6">
         <div className="max-w-2xl animate-fade-up">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 sm:mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-primary mb-4 sm:mb-6">
             Ihr Partner für Immobilienverwaltung
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8">
-            Professionelle Hausverwaltung mit Herz und Verstand
+          <p className="text-base sm:text-lg md:text-xl text-primary/90 mb-6 sm:mb-8">
+            Die Brücke zwischen Vermieter und Mieter
           </p>
           <Button
             size="lg"
-            className="bg-white text-primary hover:bg-white/90 w-full sm:w-auto"
+            className="bg-primary text-white hover:bg-primary/90 w-full sm:w-auto"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Kontakt aufnehmen
