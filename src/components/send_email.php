@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $email_content .= "--$boundary--";
 
-    // Проверка перед 
+    // Проверка перед отправкой
     if (!$name || !$email || !$message) {
         error_log("Missing required fields: Name ($name), Email ($email), Message ($message)");
         die("Hoppla! Fehlende Angaben.");
