@@ -5,22 +5,22 @@ export const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Über uns</h2>
-            <p className="text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6">
+            {/* <p className="text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6">
               Hausverwaltung Natalie Frank steht seit über 20 Jahren für professionelle
               und zuverlässige Immobilienverwaltung in der Region.
-            </p>
+            </p> */}
             <ul className="space-y-3 sm:space-y-4 text-base sm:text-lg text-muted-foreground">
               <li className="flex items-center">
                 <span className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0" />
-                Persönliche Betreuung und kurze Reaktionszeiten
+                Ihre Ansprechpartnerin Natalie Frank, geprüfte Rechtsfachwirtin, bringt umfassendes Fachwissen und Kompetenz in die Verwaltung Ihrer Immobilien ein.
               </li>
               <li className="flex items-center">
                 <span className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0" />
-                Transparente Kommunikation und faire Konditionen
+                Die Hausverwaltung Natalie Frank versteht sich nicht nur als Verwalter, sondern auch als Vermittler und Konfliktlöser.
               </li>
               <li className="flex items-center">
                 <span className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0" />
-                Langjährige Erfahrung im Immobilienmanagement
+                Mit viel Einfühlungsvermögen und Fingerspitzengefühl suchen wir stets nach der bestmöglichen Lösung für alle Beteiligten.
               </li>
             </ul>
           </div>

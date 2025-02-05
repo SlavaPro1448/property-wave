@@ -5,6 +5,7 @@ import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import logo from "@/img/FullLogo-5-removebg-preview.png";
 
 const navItems = [
   { title: "Startseite", href: "/" },
@@ -31,9 +32,9 @@ export const Navigation = () => {
               <span className="font-semibold text-primary">Hausverwaltung Frank</span>
               <div className="flex items-center gap-4">
                 <img 
-                  src="./img/FullLogo-5-removebg-preview.png" 
+                  src={logo} 
                   alt="Hausverwaltung Frank Logo" 
-                  className="h-8 w-auto object-contain"
+                  className="h-8 w-auto object-contain" 
                 />
                 <button onClick={toggleMenu} className="p-2">
                   {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -74,11 +75,11 @@ export const Navigation = () => {
                 ))}
               </NavigationMenuList>
             </NavigationMenu>
-            <img 
-              src="./img/FullLogo-5-removebg-preview.png"
-              alt="Hausverwaltung Frank Logo" 
-              className="h-12 w-auto object-contain"
-            />
+                <img 
+                  src={logo} 
+                  alt="Hausverwaltung Frank Logo" 
+                  className="h-8 w-auto object-contain" 
+                />
           </div>
         )}
       </div>
