@@ -1,3 +1,4 @@
+
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
@@ -28,9 +29,16 @@ export const Navigation = () => {
           <div>
             <div className="flex justify-between items-center">
               <span className="font-semibold text-primary">Hausverwaltung Frank</span>
-              <button onClick={toggleMenu} className="p-2">
-                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </button>
+              <div className="flex items-center gap-4">
+                <img 
+                  src="/hausverwaltung-logo.jpg" 
+                  alt="Hausverwaltung Frank Logo" 
+                  className="h-8 w-auto object-contain"
+                />
+                <button onClick={toggleMenu} className="p-2">
+                  {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                </button>
+              </div>
             </div>
             {isMenuOpen && (
               <nav className="mt-4">
@@ -51,20 +59,27 @@ export const Navigation = () => {
             )}
           </div>
         ) : (
-          <NavigationMenu>
-            <NavigationMenuList>
-              {navItems.map((item) => (
-                <NavigationMenuItem key={item.title}>
-                  <NavigationMenuLink
-                    href={item.href}
-                    className={cn(navigationMenuTriggerStyle(), "text-primary")}
-                  >
-                    {item.title}
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
+          <div className="flex justify-between items-center">
+            <NavigationMenu>
+              <NavigationMenuList>
+                {navItems.map((item) => (
+                  <NavigationMenuItem key={item.title}>
+                    <NavigationMenuLink
+                      href={item.href}
+                      className={cn(navigationMenuTriggerStyle(), "text-primary")}
+                    >
+                      {item.title}
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                ))}
+              </NavigationMenuList>
+            </NavigationMenu>
+            <img 
+              src="/hausverwaltung-logo.jpg" 
+              alt="Hausverwaltung Frank Logo" 
+              className="h-12 w-auto object-contain"
+            />
+          </div>
         )}
       </div>
     </div>
