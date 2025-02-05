@@ -31,7 +31,7 @@ export const Navigation = () => {
               <span className="font-semibold text-primary">Hausverwaltung Frank</span>
               <div className="flex items-center gap-4">
                 <img 
-                  src="/hausverwaltung-logo.jpg" 
+                  src="./img/FullLogo-5-removebg-preview.png" 
                   alt="Hausverwaltung Frank Logo" 
                   className="h-8 w-auto object-contain"
                 />
@@ -75,7 +75,7 @@ export const Navigation = () => {
               </NavigationMenuList>
             </NavigationMenu>
             <img 
-              src="/hausverwaltung-logo.jpg" 
+              src="./img/FullLogo-5-removebg-preview.png"
               alt="Hausverwaltung Frank Logo" 
               className="h-12 w-auto object-contain"
             />
