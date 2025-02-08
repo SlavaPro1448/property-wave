@@ -20,13 +20,13 @@ export const ContactForm = () => {
         body: formData,
       });
   
-      const result = await response.json();
+      const result = await response.text();
       console.log("Server response:", result);
   
       toast({
-        title: result.status === "success" ? "Message sent" : "Error",
-        description: result.message,
-        variant: result.status === "success" ? "default" : "destructive",
+        title: result.includes("Vielen Dank") ? "Success" : "Error",
+        description: result,
+        variant: result.includes("Vielen Dank") ? "default" : "destructive",
       });
     } catch (error) {
       console.error("Error:", error);
@@ -73,10 +73,10 @@ export const ContactForm = () => {
         <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <div>
-              <label htmlFor="name" className="block mb-2 text-sm sm:text-base">
+              <label htmlFor="first-name" className="block mb-2 text-sm sm:text-base">
                 Name
               </label>
-              <Input id="name" name="name" required />
+              <Input id="first-name" name="first-name" required />
             </div>
             <div>
               <label htmlFor="email" className="block mb-2 text-sm sm:text-base">
@@ -92,11 +92,12 @@ export const ContactForm = () => {
             <Textarea id="message" name="message" required className="min-h-[120px] sm:min-h-[150px]" />
           </div>
           <div>
-            <label htmlFor="file" className="block mb-2 text-sm sm:text-base">
+            <label htmlFor="attachment" className="block mb-2 text-sm sm:text-base">
               Attach a file (PDF only, max 5MB)
             </label>
             <input 
-              id="file" 
+              id="attachment" 
+              name="attachment[]"
               type="file" 
               accept="application/pdf" 
               onChange={handleFileChange}

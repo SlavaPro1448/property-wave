@@ -1,8 +1,9 @@
+
 <?php
-error_reporting(E_ALL); // Включаем вывод всех ошибок
+error_reporting(E_ALL);
 ini_set('display_errors', 1);
 ini_set('log_errors', 1);
-ini_set('error_log', __DIR__ . '/error_log.txt'); // Лог ошибок в файл
+ini_set('error_log', __DIR__ . '/error_log.txt');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars(trim($_POST["first-name"] ?? ''));
