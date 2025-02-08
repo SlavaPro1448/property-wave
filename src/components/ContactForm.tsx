@@ -15,7 +15,7 @@ export const ContactForm = () => {
     const formData = new FormData(form);
   
     try {
-      const response = await fetch("https://your-domain.de/send_email.php", {
+      const response = await fetch("https://hausverwaltung-natalie-frank.de/send_email.php", {
         method: "POST",
         body: formData,
       });
