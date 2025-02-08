@@ -18,6 +18,8 @@ export const ContactForm = () => {
       const response = await fetch("https://hausverwaltung-natalie-frank.de/send_email.php", {
         method: "POST",
         body: formData,
+        credentials: 'include',
+        mode: 'cors',
       });
   
       const result = await response.text();
